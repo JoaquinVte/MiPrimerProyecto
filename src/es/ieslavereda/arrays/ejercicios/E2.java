@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class E2 {
 
+    // Actualizacion
+
     public static void main(String[] args) {
 
         float[] numeros = new float[10];
