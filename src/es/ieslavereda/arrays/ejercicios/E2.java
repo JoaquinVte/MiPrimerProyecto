@@ -14,6 +14,11 @@ public class E2 {
         mostrar(numeros);
         System.out.println("La suma es: " + suma(numeros));
         maxMin(numeros);
+        int[] posMaxMin = maxMinPos(numeros);
+        int max =posMaxMin[0];
+        int min = posMaxMin[1];
+        System.out.println("Pos max: "+ max +",Max: " + numeros[max] +" -  Pos min: " +min+" Min: "+ numeros[min]);
+
         sumaPostivosNegativos(numeros);
         System.out.println("La media es: " + media(numeros));
 
@@ -78,5 +83,24 @@ public class E2 {
 
     public static float media(float[] numeros){
         return suma(numeros)/ numeros.length;
+    }
+
+    public static int[] maxMinPos(float[] numeros){
+
+        int max = 0;
+        int min = 0;
+
+        for (int i = 1; i < numeros.length; i++){
+
+            if(numeros[i]>numeros[max])
+                max = i;
+            else if(numeros[i]<numeros[min])
+                min = i;
+
+        }
+
+        return new int[]{max,min};
+
+
     }
 }
