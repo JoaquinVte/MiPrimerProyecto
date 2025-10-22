@@ -11,6 +11,8 @@ public class Ejemplo10 {
         fill(personas);
         show(personas);
 
+        mostrarNombresConEdad(personas,edadMinima(personas));
+
     }
 
     private static void show(String[][] personas) {
@@ -18,6 +20,22 @@ public class Ejemplo10 {
         for(int i=0;i<personas[0].length;i++)
             System.out.println(personas[0][i]+ " -> " +personas[1][i]);
 
+    }
+
+    private static void mostrarNombresConEdad(String[][] personas,int edad) {
+
+        for (int i=0;i<personas[1].length;i++)
+            if(Integer.parseInt(personas[1][i]) == edad)
+                System.out.println(personas[0][i]);
+
+    }
+
+    private static int edadMinima(String[][] personas) {
+        int edadMinima = Integer.parseInt(personas[1][0]);
+        for(String edad : personas[1])
+            edadMinima = Math.min(edadMinima,Integer.parseInt(edad));
+
+        return edadMinima;
     }
 
     private static void fill(String[][] personas) {
